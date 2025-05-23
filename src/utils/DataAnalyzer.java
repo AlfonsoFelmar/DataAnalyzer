@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-class DataAnalyzer {
+public class DataAnalyzer {
 
  
     public static double calculateMean(List<Double> data) {

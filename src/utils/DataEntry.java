@@ -1,21 +1,35 @@
 package utils;
 
+
+import java.util.List;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
+import java.util.Objects; 
 
 
-class DataEntry {
+public class DataEntry {
+    private int id; 
     private String name;
     private List<Double> data1;
     private List<Double> data2;
     private String timestamp;
 
+
     public DataEntry(String name, List<Double> data1, List<Double> data2) {
+        this(-1, name, data1, data2, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+    }
+
+    // Constructor for loading from database
+    public DataEntry(int id, String name, List<Double> data1, List<Double> data2, String timestamp) {
+        this.id = id;
         this.name = name;
         this.data1 = data1;
         this.data2 = data2;
-        this.timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        this.timestamp = timestamp;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -37,5 +51,22 @@ class DataEntry {
     @Override
     public String toString() {
         return name + " (" + timestamp + ")";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DataEntry dataEntry = (DataEntry) o;
+        // For equality, consider name and timestamp sufficient if ID is not yet assigned (-1)
+        // or if comparing loaded entries, ID is primary.
+        return id == dataEntry.id &&
+               Objects.equals(name, dataEntry.name) &&
+               Objects.equals(timestamp, dataEntry.timestamp);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, timestamp);
     }
 }
