@@ -543,7 +543,9 @@ public class Mainmenu extends javax.swing.JFrame {
     }//GEN-LAST:event_closeMouseExited
 
     private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
-        System.exit(0);
+        dispose();
+        WelcomeFrame welcome = new WelcomeFrame();
+        welcome.setVisible(true);
     }//GEN-LAST:event_closeMouseClicked
 
     private void fullmaxMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fullmaxMouseEntered

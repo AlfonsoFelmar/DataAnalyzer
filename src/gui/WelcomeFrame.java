@@ -29,24 +29,42 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
+        setTitle("Data Analysis Workbench");
 
         jPanel1.setBackground(new java.awt.Color(236, 250, 229));
-        jPanel1.setLayout(new java.awt.GridLayout(3, 1));
+        jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jPanel2.setBackground(new java.awt.Color(236, 250, 229));
-        jPanel2.setLayout(new java.awt.GridLayout(2, 1));
+        jPanel2.setLayout(new java.awt.CardLayout());
 
         jPanel3.setBackground(new java.awt.Color(236, 250, 229));
 
@@ -54,77 +72,261 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 679, Short.MAX_VALUE)
+            .addGap(0, 663, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 79, Short.MAX_VALUE)
+            .addGap(0, 486, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel3);
-
-        jPanel4.setBackground(new java.awt.Color(236, 250, 229));
-
-        jLabel1.setFont(new java.awt.Font("Noto Serif KR", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel1.setText("Data Analysis");
-        jPanel4.add(jLabel1);
-
-        jPanel2.add(jPanel4);
-
-        jPanel1.add(jPanel2);
+        jPanel2.add(jPanel3, "card2");
 
         jPanel5.setBackground(new java.awt.Color(236, 250, 229));
-        jPanel5.setLayout(new java.awt.GridLayout(3, 3));
 
-        jPanel9.setBackground(new java.awt.Color(236, 250, 229));
-        jPanel9.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, -10));
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 663, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 486, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel5, "card3");
+
+        jPanel6.setBackground(new java.awt.Color(236, 250, 229));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 663, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 486, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel6, "card3");
+
+        jPanel7.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel7.setLayout(new java.awt.GridLayout(3, 1));
+
+        jPanel8.setBackground(new java.awt.Color(236, 250, 229));
 
         jLabel2.setFont(new java.awt.Font("Noto Serif KR", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel2.setText("Workbench");
-        jPanel9.add(jLabel2);
+        jLabel2.setText("<html>Data Analysis<br/>Workbench</html>");
+        jPanel8.add(jLabel2);
 
-        jPanel5.add(jPanel9);
+        jPanel7.add(jPanel8);
+
+        jPanel9.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel9.setLayout(new java.awt.GridLayout(3, 0));
+
+        jPanel14.setBackground(new java.awt.Color(236, 250, 229));
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 663, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 54, Short.MAX_VALUE)
+        );
+
+        jPanel9.add(jPanel14);
+
+        jPanel15.setBackground(new java.awt.Color(236, 250, 229));
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 663, Short.MAX_VALUE)
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 54, Short.MAX_VALUE)
+        );
+
+        jPanel9.add(jPanel15);
+
+        jPanel16.setBackground(new java.awt.Color(236, 250, 229));
+
+        jLabel14.setFont(new java.awt.Font("Noto Serif KR", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(176, 219, 156));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("<html>Key Features</html>");
+        jLabel14.setPreferredSize(new java.awt.Dimension(500, 27));
+        jPanel16.add(jLabel14);
+
+        jPanel9.add(jPanel16);
+
+        jPanel7.add(jPanel9);
 
         jPanel10.setBackground(new java.awt.Color(236, 250, 229));
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 679, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
-        );
-
-        jPanel5.add(jPanel10);
+        jPanel10.setPreferredSize(new java.awt.Dimension(670, 190));
+        jPanel10.setLayout(new java.awt.GridLayout(1, 3));
 
         jPanel11.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 188, 133), 1, true));
+        jPanel11.setLayout(new java.awt.GridLayout(3, 0, 0, -20));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon2/data visual.png"))); // NOI18N
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel3.setPreferredSize(new java.awt.Dimension(100, 57));
+        jPanel11.add(jLabel3);
+
+        jLabel4.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 188, 133));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("<html>Data Visualization</html>");
+        jLabel4.setPreferredSize(new java.awt.Dimension(139, 27));
+        jPanel11.add(jLabel4);
+
+        jLabel5.setFont(new java.awt.Font("Noto Serif KR", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 188, 133));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("<html><center>Create beautiful and informative<br/>charts and graphs effortlessly.</center></html>");
+        jPanel11.add(jLabel5);
+
+        jPanel10.add(jPanel11);
+
+        jPanel12.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 188, 133), 1, true));
+        jPanel12.setLayout(new java.awt.GridLayout(3, 0, 0, -20));
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon2/analytics.png"))); // NOI18N
+        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel6.setPreferredSize(new java.awt.Dimension(100, 57));
+        jPanel12.add(jLabel6);
+
+        jLabel7.setFont(new java.awt.Font("Noto Serif KR", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 188, 133));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("<html>Advanced Analytics</html>");
+        jLabel7.setPreferredSize(new java.awt.Dimension(139, 27));
+        jPanel12.add(jLabel7);
+
+        jLabel8.setFont(new java.awt.Font("Noto Serif KR", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 188, 133));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("<html><center>Utilize a cutting-edge algorithm<br/>for indept data analysis.</center></html>");
+        jPanel12.add(jLabel8);
+
+        jPanel10.add(jPanel12);
+
+        jPanel13.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 188, 133), 1, true));
+        jPanel13.setLayout(new java.awt.GridLayout(3, 0, 0, -25));
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon2/security.png"))); // NOI18N
+        jLabel9.setPreferredSize(new java.awt.Dimension(100, 57));
+        jPanel13.add(jLabel9);
+
+        jLabel10.setFont(new java.awt.Font("Noto Serif KR", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(153, 188, 133));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Secure and Reliable");
+        jLabel10.setPreferredSize(new java.awt.Dimension(139, 27));
+        jPanel13.add(jLabel10);
+
+        jLabel11.setFont(new java.awt.Font("Noto Serif KR", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 188, 133));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("<html><center>Your details are protected  with <br/> industry leading  security measures.</center></html>");
+        jPanel13.add(jLabel11);
+
+        jPanel10.add(jPanel13);
+
+        jPanel7.add(jPanel10);
+
+        jPanel2.add(jPanel7, "card3");
+
+        jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
+
+        jPanel4.setBackground(new java.awt.Color(153, 188, 133));
+        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 188, 133), 5, true));
+        jPanel4.setPreferredSize(new java.awt.Dimension(663, 75));
+        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 20));
 
         jButton1.setBackground(new java.awt.Color(202, 232, 189));
         jButton1.setFont(new java.awt.Font("Noto Serif KR", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(153, 188, 133));
-        jButton1.setText(" Start Analysis");
-        jPanel11.add(jButton1);
+        jButton1.setText("Home");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton1);
 
         jButton2.setBackground(new java.awt.Color(202, 232, 189));
         jButton2.setFont(new java.awt.Font("Noto Serif KR", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(153, 188, 133));
         jButton2.setText("About us");
-        jPanel11.add(jButton2);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton2);
 
-        jPanel5.add(jPanel11);
+        jButton3.setBackground(new java.awt.Color(202, 232, 189));
+        jButton3.setFont(new java.awt.Font("Noto Serif KR", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(153, 188, 133));
+        jButton3.setText("FAQs");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton3);
 
-        jPanel1.add(jPanel5);
+        jButton4.setBackground(new java.awt.Color(202, 232, 189));
+        jButton4.setFont(new java.awt.Font("Noto Serif KR", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(153, 188, 133));
+        jButton4.setText("Contact us");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton4);
+
+        jPanel1.add(jPanel4, java.awt.BorderLayout.PAGE_START);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(679, 505));
+        setSize(new java.awt.Dimension(679, 570));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+        Mainmenu main = new Mainmenu();
+        main.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,15 +367,34 @@ public class WelcomeFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }
