@@ -7,6 +7,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects; 
 
 
+
+import java.util.List;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects; 
+
 public class DataEntry {
     private int id; 
     private String name;
@@ -19,7 +25,7 @@ public class DataEntry {
         this(-1, name, data1, data2, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
     }
 
-    // Constructor for loading from database
+
     public DataEntry(int id, String name, List<Double> data1, List<Double> data2, String timestamp) {
         this.id = id;
         this.name = name;
@@ -58,8 +64,7 @@ public class DataEntry {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DataEntry dataEntry = (DataEntry) o;
-        // For equality, consider name and timestamp sufficient if ID is not yet assigned (-1)
-        // or if comparing loaded entries, ID is primary.
+      
         return id == dataEntry.id &&
                Objects.equals(name, dataEntry.name) &&
                Objects.equals(timestamp, dataEntry.timestamp);
