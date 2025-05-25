@@ -4,6 +4,13 @@
  */
 package gui;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author Admin
@@ -15,8 +22,67 @@ public class WelcomeFrame extends javax.swing.JFrame {
      */
     public WelcomeFrame() {
         initComponents();
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            @Override
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                scaleFonts();
+                resizeButton();
+            }
+        });
     }
+    
+    private void resizeButton() {
+        int baseWidth = 900;
+        int baseButtonWidth = 180;
+        int baseButtonHeight = 40;
+        
+        float scale = (float) getWidth() / baseWidth;
 
+        int newW = Math.max(210, Math.round(baseButtonWidth * scale));
+        int newH = Math.max(34, Math.round(baseButtonHeight * scale));
+
+        Dimension newSize = new Dimension(newW, newH);
+
+        jButton5.setPreferredSize(newSize);
+        jButton5.setMinimumSize(new Dimension(199, 34));
+        jButton5.setMaximumSize(new Dimension(400, 100));
+
+        jButton5.revalidate();
+        jButton5.getParent().repaint();
+    }
+    
+    private void scaleFonts() {
+        float baseWidth = 900f; 
+        float scale = getWidth() / baseWidth;
+        
+        float titleFontSize = Math.max(18f, 15f * scale);
+        float bodyFontSize  = Math.max(12f, 13f * scale);
+        
+        //Home
+        float buttonFont = Math.max(18f, 14f * scale);
+        float dataAnalysisTitle = Math.max(48f, 29f * scale);
+        
+        jLabel2.setFont(jLabel2.getFont().deriveFont(dataAnalysisTitle));
+        
+        jButton5.setFont(jButton5.getFont().deriveFont(buttonFont));
+        jLabel14.setFont(jLabel14.getFont().deriveFont(titleFontSize));
+        
+        jLabel4.setFont(jLabel4.getFont().deriveFont(bodyFontSize));
+        jLabel5.setFont(jLabel5.getFont().deriveFont(bodyFontSize));
+        jLabel7.setFont(jLabel7.getFont().deriveFont(bodyFontSize));
+        jLabel8.setFont(jLabel8.getFont().deriveFont(bodyFontSize));
+        jLabel10.setFont(jLabel10.getFont().deriveFont(bodyFontSize));
+        jLabel11.setFont(jLabel11.getFont().deriveFont(bodyFontSize));
+        //Home
+        
+        //About us
+        jLabel12.setFont(jLabel12.getFont().deriveFont(titleFontSize));
+        jLabel13.setFont(jLabel13.getFont().deriveFont(bodyFontSize));
+    
+        jLabel17.setFont(jLabel17.getFont().deriveFont(titleFontSize));
+        jLabel15.setFont(jLabel15.getFont().deriveFont(bodyFontSize));
+        //About us
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,8 +97,11 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel33 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -51,17 +120,10 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
+        jPanel31 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jPanel18 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel19 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        jPanel32 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
@@ -69,16 +131,33 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
+        jPanel30 = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jPanel34 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel35 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jPanel29 = new javax.swing.JPanel();
+        jPanel26 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jPanel27 = new javax.swing.JPanel();
+        jPanel24 = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Data Analysis Workbench");
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(236, 250, 229));
         jPanel1.setLayout(new java.awt.BorderLayout());
@@ -95,6 +174,15 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jLabel2.setText("<html>Data Analysis<br/>Workbench</html>");
         jPanel8.add(jLabel2);
 
+        jPanel33.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel33.setPreferredSize(new java.awt.Dimension(200, 200));
+        jPanel33.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, -15));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon2/sistem.png"))); // NOI18N
+        jPanel33.add(jLabel1);
+
+        jPanel8.add(jPanel33);
+
         jPanel7.add(jPanel8);
 
         jPanel9.setBackground(new java.awt.Color(236, 250, 229));
@@ -102,16 +190,19 @@ public class WelcomeFrame extends javax.swing.JFrame {
 
         jPanel14.setBackground(new java.awt.Color(236, 250, 229));
 
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 663, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 63, Short.MAX_VALUE)
-        );
+        jButton5.setBackground(new java.awt.Color(202, 232, 189));
+        jButton5.setFont(new java.awt.Font("Noto Serif KR", 1, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(153, 188, 133));
+        jButton5.setText("Start Data Analyze");
+        jButton5.setMaximumSize(null);
+        jButton5.setMinimumSize(new java.awt.Dimension(120, 30));
+        jButton5.setPreferredSize(null);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(jButton5);
 
         jPanel9.add(jPanel14);
 
@@ -121,22 +212,24 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 663, Short.MAX_VALUE)
+            .addGap(0, 662, Short.MAX_VALUE)
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 63, Short.MAX_VALUE)
+            .addGap(0, 76, Short.MAX_VALUE)
         );
 
         jPanel9.add(jPanel15);
 
         jPanel16.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel16.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 25));
 
         jLabel14.setFont(new java.awt.Font("Noto Serif KR", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(176, 219, 156));
+        jLabel14.setForeground(new java.awt.Color(153, 188, 133));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("<html>Key Features</html>");
-        jLabel14.setPreferredSize(new java.awt.Dimension(500, 27));
+        jLabel14.setPreferredSize(new java.awt.Dimension(500, 50));
+        jLabel14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel16.add(jLabel14);
 
         jPanel9.add(jPanel16);
@@ -230,111 +323,116 @@ public class WelcomeFrame extends javax.swing.JFrame {
 
         jPanel17.setBackground(new java.awt.Color(236, 250, 229));
         jPanel17.setPreferredSize(new java.awt.Dimension(663, 50));
-        jPanel17.setLayout(new javax.swing.BoxLayout(jPanel17, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel17.setLayout(new java.awt.GridLayout(1, 0));
+
+        jPanel31.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(83, 125, 93)));
+        jPanel31.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         jLabel12.setFont(new java.awt.Font("Noto Serif KR", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel12.setText("<html>About us</html>");
-        jPanel17.add(jLabel12);
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("<html><center>About us</center></html>");
+        jLabel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel12.setPreferredSize(new java.awt.Dimension(200, 40));
+        jPanel31.add(jLabel12);
+
+        jPanel17.add(jPanel31);
+
+        jPanel32.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(83, 125, 93)));
+        jPanel32.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
+
+        jLabel17.setFont(new java.awt.Font("Noto Serif KR", 1, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(176, 219, 156));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("<html><center>Key Features</center></html>");
+        jLabel17.setPreferredSize(new java.awt.Dimension(220, 45));
+        jPanel32.add(jLabel17);
+
+        jPanel17.add(jPanel32);
 
         jPanel3.add(jPanel17, java.awt.BorderLayout.PAGE_START);
 
-        jPanel18.setBackground(new java.awt.Color(236, 250, 229));
-
-        jLabel13.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel13.setText("<html><justify>This Data Analysis Software is designed to<br/>provide users with a simple yet powerful tool<br/>for performing basic statistical analysis and<br/>data visualization. It supports common<br/>statistical tests like Z-test, T-test<br/>(one-sample and two-sample), and calculates<br/>descriptive statistics such as mean, median,<br/>mode, and skewness.</justify></html>");
-        jLabel13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel13.setPreferredSize(new java.awt.Dimension(360, 168));
-        jPanel18.add(jLabel13);
-
-        jLabel1.setText("jLabel1");
-        jLabel1.setPreferredSize(new java.awt.Dimension(200, 100));
-        jPanel18.add(jLabel1);
-
-        jPanel19.setBackground(new java.awt.Color(236, 250, 229));
-        jPanel19.setPreferredSize(new java.awt.Dimension(660, 50));
-        jPanel19.setLayout(new javax.swing.BoxLayout(jPanel19, javax.swing.BoxLayout.LINE_AXIS));
-
-        jLabel15.setFont(new java.awt.Font("Noto Serif KR", 1, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel15.setText("<html>Key Features:</html>");
-        jPanel19.add(jLabel15);
-
-        jPanel18.add(jPanel19);
-
-        jLabel16.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel16.setText("<html>-Raw data input and basic statistics calculation</html>");
-        jLabel16.setPreferredSize(new java.awt.Dimension(650, 21));
-        jPanel18.add(jLabel16);
-
-        jLabel17.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel17.setText("<html>-One-sample and two-sample T-tests</html>");
-        jLabel17.setPreferredSize(new java.awt.Dimension(650, 21));
-        jPanel18.add(jLabel17);
-
-        jLabel18.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel18.setText("<html>-One-sample Z-test</html>");
-        jLabel18.setPreferredSize(new java.awt.Dimension(650, 21));
-        jPanel18.add(jLabel18);
-
-        jLabel19.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel19.setText("<html>-Skewness calculation</html>");
-        jLabel19.setPreferredSize(new java.awt.Dimension(650, 21));
-        jPanel18.add(jLabel19);
-
-        jLabel20.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel20.setText("<html>-Basic graphical representations (Histogram, Bar Chart, Scatter Plot)</html>");
-        jLabel20.setPreferredSize(new java.awt.Dimension(650, 21));
-        jPanel18.add(jLabel20);
-
-        jPanel3.add(jPanel18, java.awt.BorderLayout.CENTER);
-
-        jPanel20.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel20.setBackground(new java.awt.Color(153, 188, 133));
+        jPanel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(83, 125, 93)));
         jPanel20.setPreferredSize(new java.awt.Dimension(663, 150));
         jPanel20.setLayout(new java.awt.GridLayout(3, 0));
 
-        jPanel21.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel21.setBackground(new java.awt.Color(153, 188, 133));
         jPanel21.setPreferredSize(new java.awt.Dimension(663, 150));
 
         jLabel21.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(176, 219, 156));
+        jLabel21.setForeground(new java.awt.Color(236, 250, 229));
         jLabel21.setText("<html>Developed with Java Swing for a cross-platform desktop experience.</html>");
         jLabel21.setPreferredSize(new java.awt.Dimension(500, 21));
         jPanel21.add(jLabel21);
 
         jPanel20.add(jPanel21);
 
-        jPanel22.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel22.setBackground(new java.awt.Color(153, 188, 133));
         jPanel22.setPreferredSize(new java.awt.Dimension(663, 150));
-        jPanel22.setLayout(new javax.swing.BoxLayout(jPanel22, javax.swing.BoxLayout.LINE_AXIS));
 
+        jLabel22.setBackground(new java.awt.Color(153, 188, 133));
         jLabel22.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel22.setText("<html>Version: 1.0<br/>Release Date: May 2025</html>");
-        jLabel22.setPreferredSize(new java.awt.Dimension(500, 21));
+        jLabel22.setForeground(new java.awt.Color(236, 250, 229));
+        jLabel22.setText("<html><center>Version: 1.0<br/>Release Date: May 2025</center></html>");
+        jLabel22.setPreferredSize(new java.awt.Dimension(180, 40));
         jPanel22.add(jLabel22);
 
         jPanel20.add(jPanel22);
 
-        jPanel23.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel23.setBackground(new java.awt.Color(153, 188, 133));
         jPanel23.setPreferredSize(new java.awt.Dimension(663, 150));
         jPanel23.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 28));
 
         jLabel23.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(176, 219, 156));
-        jLabel23.setText("<html>© 2025 Your Company/Name. All rights reserved.</html>");
+        jLabel23.setForeground(new java.awt.Color(236, 250, 229));
+        jLabel23.setText("<html>© 2025 Jelantronix Tech-tikon. All rights reserved.</html>");
         jLabel23.setPreferredSize(new java.awt.Dimension(370, 21));
         jPanel23.add(jLabel23);
 
         jPanel20.add(jPanel23);
 
         jPanel3.add(jPanel20, java.awt.BorderLayout.SOUTH);
+
+        jPanel30.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel30.setLayout(new java.awt.GridLayout(2, 0));
+
+        jPanel18.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel18.setLayout(new java.awt.GridLayout(1, 2));
+
+        jPanel34.setBackground(new java.awt.Color(153, 188, 133));
+        jPanel34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(83, 125, 93)));
+
+        jLabel13.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(236, 250, 229));
+        jLabel13.setText("<html>This Data Analysis Software is designed to<br/>provide users with a simple yet powerful<br/>tool for performing basic statistical analysis<br/>and data visualization. It supports common<br/>statistical tests like Z-test, T-test(one-sample<br/>and two-sample), and calculates descriptive<br/>statistics such as mean, median, mode,<br/>and skewness.</html>");
+        jPanel34.add(jLabel13);
+
+        jPanel18.add(jPanel34);
+
+        jPanel35.setBackground(new java.awt.Color(153, 188, 133));
+        jPanel35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(83, 125, 93)));
+
+        jLabel15.setFont(new java.awt.Font("Noto Serif KR", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(236, 250, 229));
+        jLabel15.setText("<html>-Raw data input and basic statistics<br/>calculation<br/>-One-sample and two-sample T-tests<br/>-One-sample Z-test<br/>-Skewness calculation<br/>-Basic graphical representations<br/>(Histogram, Bar Chart, Scatter Plot)</html>");
+        jPanel35.add(jLabel15);
+
+        jPanel18.add(jPanel35);
+
+        jPanel30.add(jPanel18);
+
+        jPanel19.setBackground(new java.awt.Color(236, 250, 229));
+        jPanel19.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 100));
+
+        jLabel16.setText("jLabel16");
+        jPanel19.add(jLabel16);
+
+        jPanel30.add(jPanel19);
+
+        jPanel3.add(jPanel30, java.awt.BorderLayout.CENTER);
 
         jPanel2.add(jPanel3, "card2");
 
@@ -344,11 +442,11 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 663, Short.MAX_VALUE)
+            .addGap(0, 662, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 692, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel5, "card3");
@@ -359,11 +457,11 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 663, Short.MAX_VALUE)
+            .addGap(0, 662, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 692, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel6, "card3");
@@ -372,8 +470,28 @@ public class WelcomeFrame extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(153, 188, 133));
         jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 188, 133), 5, true));
-        jPanel4.setPreferredSize(new java.awt.Dimension(663, 75));
-        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 20));
+        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel4.setPreferredSize(new java.awt.Dimension(663, 50));
+        jPanel4.setLayout(new java.awt.BorderLayout());
+
+        jPanel29.setBackground(new java.awt.Color(153, 188, 133));
+        jPanel29.setPreferredSize(new java.awt.Dimension(80, 60));
+
+        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+        jPanel29.setLayout(jPanel29Layout);
+        jPanel29Layout.setHorizontalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+        );
+        jPanel29Layout.setVerticalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        jPanel4.add(jPanel29, java.awt.BorderLayout.LINE_START);
+
+        jPanel26.setBackground(new java.awt.Color(153, 188, 133));
+        jPanel26.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 3));
 
         jButton1.setBackground(new java.awt.Color(202, 232, 189));
         jButton1.setFont(new java.awt.Font("Noto Serif KR", 1, 18)); // NOI18N
@@ -384,7 +502,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton1);
+        jPanel26.add(jButton1);
 
         jButton2.setBackground(new java.awt.Color(202, 232, 189));
         jButton2.setFont(new java.awt.Font("Noto Serif KR", 1, 18)); // NOI18N
@@ -395,7 +513,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton2);
+        jPanel26.add(jButton2);
 
         jButton3.setBackground(new java.awt.Color(202, 232, 189));
         jButton3.setFont(new java.awt.Font("Noto Serif KR", 1, 18)); // NOI18N
@@ -406,7 +524,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton3);
+        jPanel26.add(jButton3);
 
         jButton4.setBackground(new java.awt.Color(202, 232, 189));
         jButton4.setFont(new java.awt.Font("Noto Serif KR", 1, 18)); // NOI18N
@@ -417,13 +535,66 @@ public class WelcomeFrame extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton4);
+        jPanel26.add(jButton4);
+
+        jPanel4.add(jPanel26, java.awt.BorderLayout.CENTER);
+
+        jPanel27.setBackground(new java.awt.Color(153, 188, 133));
+        jPanel27.setLayout(new java.awt.BorderLayout());
+
+        jPanel24.setBackground(new java.awt.Color(153, 188, 133));
+        jPanel24.setPreferredSize(new java.awt.Dimension(130, 60));
+        jPanel24.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT, 5, 0));
+
+        jPanel28.setBackground(new java.awt.Color(153, 188, 133));
+        jPanel28.setPreferredSize(new java.awt.Dimension(40, 40));
+        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/full_screen_32px.png"))); // NOI18N
+        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel25MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel25MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel25MouseExited(evt);
+            }
+        });
+        jPanel28.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 4, -1, -1));
+
+        jPanel24.add(jPanel28);
+
+        jPanel25.setBackground(new java.awt.Color(153, 188, 133));
+        jPanel25.setPreferredSize(new java.awt.Dimension(40, 40));
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/delete_32px.png"))); // NOI18N
+        jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel24MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel24MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel24MouseExited(evt);
+            }
+        });
+        jPanel25.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 4, -1, -1));
+
+        jPanel24.add(jPanel25);
+
+        jPanel27.add(jPanel24, java.awt.BorderLayout.CENTER);
+
+        jPanel4.add(jPanel27, java.awt.BorderLayout.LINE_END);
 
         jPanel1.add(jPanel4, java.awt.BorderLayout.PAGE_START);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(679, 656));
+        setSize(new java.awt.Dimension(662, 742));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -452,6 +623,41 @@ public class WelcomeFrame extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Mainmenu main = new Mainmenu();
+        main.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jLabel24MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseEntered
+        jPanel25.setBackground(Color.decode("#CAE8BD"));
+    }//GEN-LAST:event_jLabel24MouseEntered
+
+    private void jLabel24MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseExited
+        jPanel25.setBackground(Color.decode("#99BC85"));
+    }//GEN-LAST:event_jLabel24MouseExited
+
+    private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jLabel24MouseClicked
+
+    private void jLabel25MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseEntered
+        jPanel28.setBackground(Color.decode("#CAE8BD"));
+    }//GEN-LAST:event_jLabel25MouseEntered
+
+    private void jLabel25MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseExited
+        jPanel28.setBackground(Color.decode("#99BC85"));
+    }//GEN-LAST:event_jLabel25MouseExited
+
+    private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseClicked
+        if (this.getExtendedState() != WelcomeFrame.MAXIMIZED_BOTH) {
+            this.setExtendedState(WelcomeFrame.MAXIMIZED_BOTH);
+        }
+        else {
+            this.setExtendedState(WelcomeFrame.NORMAL);
+        }
+    }//GEN-LAST:event_jLabel25MouseClicked
 
     /**
      * @param args the command line arguments
@@ -494,6 +700,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    public javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -503,13 +710,12 @@ public class WelcomeFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -533,7 +739,19 @@ public class WelcomeFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
